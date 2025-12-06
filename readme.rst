@@ -69,3 +69,17 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+***************
+Custom for use eloquent of laravel, php-mailer an dotenv
+***************
+
+require": 
+        "php": "^7.2.5|^8.0",
+		"illuminate/database": "^10",
+		"illuminate/events": "^10",
+		"illuminate/contracts": "^10",
+		"illuminate/pagination": "^10",
+		"illuminate/support": "^10",
+		"phpmailer/phpmailer": "^6.1",
+		"vlucas/phpdotenv": "^5.5"

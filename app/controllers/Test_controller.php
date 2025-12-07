@@ -23,9 +23,42 @@ class Test_Controller extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->library('session');
+		session_start();
+		$_SESSION['usuario'] = 'Ronald';
+		$_SESSION['email'] = 'developer@example.com';
+		$this->data['session'] = $this->session->userdata();
+		print_r(json_encode($this->data));
+	}
+
+	public function view_users()
+	{
 		//$this->load->view('welcome_message');
-        $this->load->model('User_model');
-        $this->data = User_Model::all();
+        //$this->load->model('User_model');
+        //$this->data = User_Model::all();
+
+		$this->load->library('UsersLib');
+		$this->data = $this->userslib->getUsers();
+        print_r(json_encode($this->data));
+
+
+	}
+
+	public function view_roles()
+	{
+		//$this->load->view('welcome_message');
+        $this->load->model('Role_model');
+        $this->data = Role_Model::all();
         print_r(json_encode($this->data));
 	}
+
+	public function view_menus()
+	{
+		//$this->load->view('welcome_message');
+        $this->load->model('Menu_model');
+        $this->data = Menu_Model::all();
+        print_r(json_encode($this->data));
+	}
+
+
 }
